@@ -10,11 +10,11 @@ namespace DesafioCsharp.Entitties
 
         public string Nome { get; set; }
 
-        public DateTime Descricao { get; set; }
+        public string Descricao { get; set; }
 
         private readonly IList<Atividade> _atividades = new List<Atividade>();
 
-        public Projeto(string nome, DateTime descricao)
+        public Projeto(string nome, string descricao)
         {
             Nome = nome;
             Descricao = descricao;

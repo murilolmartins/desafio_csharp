@@ -1,8 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using DesafioCsharp.Entitties.Exceptions;
 
 namespace DesafioCsharp.Entitties
 {
@@ -22,7 +19,7 @@ namespace DesafioCsharp.Entitties
 
         public Colaborador(int id, string nome, DateTime dataAdmissao, double salarioBase)
         {
-            Id = id
+            Id = id;
             Nome = nome;
             DataAdmissao = dataAdmissao;
             SalarioBase = salarioBase;
@@ -30,11 +27,19 @@ namespace DesafioCsharp.Entitties
 
         public void AdicionarProjeto(Projeto projeto)
         {
+            if (projeto == null) throw new ArgumentNullException(nameof(projeto));
+
+            ExisteProjeto(projeto);
+
             _projetosParticipantes.Add(projeto);
         }
 
         public void AdicionarAtividade(Atividade atividade)
         {
+            if (atividade == null) throw new ArgumentNullException(nameof(atividade));
+
+            ExisteAtividade(atividade);
+
             _atividadesAtribuidas.Add(atividade);
         }
 
@@ -46,16 +51,6 @@ namespace DesafioCsharp.Entitties
         public void RemoverAtividade(Atividade atividade)
         {
             _atividadesAtribuidas.Remove(atividade);
-        }
-
-        public double CalcularSalario()
-        {
-            double salario = SalarioBase;
-            foreach (var atividade in _atividadesAtribuidas)
-            {
-                salario += atividade.CalcularCusto();
-            }
-            return salario;
         }
 
 
@@ -71,8 +66,6 @@ namespace DesafioCsharp.Entitties
             sb.AppendLine("Data de Admissão: " + DataAdmissao);
 
             sb.AppendLine("Salário Base: " + SalarioBase);
-
-            sb.AppendLine("Salário Total: " + CalcularSalario());
 
             sb.AppendLine("Projetos Participantes: ");
 
@@ -92,6 +85,18 @@ namespace DesafioCsharp.Entitties
 
         }
 
+        private void ExisteProjeto(Projeto projeto)
+        {
+            if (_projetosParticipantes.Any((projeto) => projeto.Nome == projeto.Nome))
+                throw new ArgumentException($"O projeto já foi adicionado ao colaborador {Nome}");
+        }
 
+        private void ExisteAtividade(Atividade atividade)
+        {
+            if (_atividadesAtribuidas.Any((atividade) => atividade.Nome == atividade.Nome))
+                throw new ConflictException($"A atividade já foi adicionada ao colaborador {Nome}");
+
+        }
     }
+
 }

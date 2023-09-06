@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/acer/desafio_csharp/DesafioCsharp/DesafioCsharp/DesafioCsharp.csproj": {}
+    "/home/acer/desafio_csharp/DesafioCsharp/DesafioCsharp.csproj": {}
   },
   "projects": {
-    "/home/acer/desafio_csharp/DesafioCsharp/DesafioCsharp/DesafioCsharp.csproj": {
+    "/home/acer/desafio_csharp/DesafioCsharp/DesafioCsharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/acer/desafio_csharp/DesafioCsharp/DesafioCsharp/DesafioCsharp.csproj",
+        "projectUniqueName": "/home/acer/desafio_csharp/DesafioCsharp/DesafioCsharp.csproj",
         "projectName": "DesafioCsharp",
-        "projectPath": "/home/acer/desafio_csharp/DesafioCsharp/DesafioCsharp/DesafioCsharp.csproj",
+        "projectPath": "/home/acer/desafio_csharp/DesafioCsharp/DesafioCsharp.csproj",
         "packagesPath": "/home/acer/.nuget/packages/",
-        "outputPath": "/home/acer/desafio_csharp/DesafioCsharp/DesafioCsharp/obj/",
+        "outputPath": "/home/acer/desafio_csharp/DesafioCsharp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/acer/.nuget/NuGet/NuGet.Config"
