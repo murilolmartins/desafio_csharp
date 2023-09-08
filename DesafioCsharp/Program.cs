@@ -39,7 +39,7 @@ namespace DesafioCsharp
                     Console.WriteLine("Digite o salário base do colaborador: ");
                     double salarioBase = double.Parse(Console.ReadLine()!, CultureInfo.InvariantCulture);
 
-                    Colaborador colaborador = new(i + 1, nome, dataAdmissao, salarioBase);
+                    Colaborador colaborador = new(id, nome, dataAdmissao, salarioBase);
 
                     colaboradores.Add(colaborador);
                 }
@@ -109,6 +109,7 @@ namespace DesafioCsharp
                     Console.WriteLine("Digite o id do colaborador que deseja atribuir um projeto: ");
 
                     int id = int.Parse(Console.ReadLine()!);
+
 
                     Colaborador? colaboradorSelecionado = colaboradores.SingleOrDefault(x => x.Id == id);
 
